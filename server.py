@@ -135,7 +135,7 @@ class MyWebServer(socketserver.BaseRequestHandler):
                 content = f.read()
 
                 content_type = self.get_content_type(path)
-                response = f"HTTP/1.1 200 OK\r\nContent-Type: {content_type}\r\n\r"
+                response = f"HTTP/1.1 200 OK\r\nContent-Type: {content_type}\r\nContent-Length: {len(content)}\r\n\n"
                 response += content
                 self.request.sendall(bytearray(response, "utf-8"))
         except Exception as e:
