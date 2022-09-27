@@ -34,7 +34,7 @@
    - [x] The webserver can return index.html from directories (paths
      that end in /)
    - [x] The webserver can server 404 errors for paths not found
-   - [ ] The webserver works with Firefox and Chromium
+   - [x] The webserver works with Firefox and Chromium
      http://127.0.0.1:8080/
    - [x] The webserver can serve CSS properly so that the front page
      has an orange h1 header.
