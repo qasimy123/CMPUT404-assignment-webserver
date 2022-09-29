@@ -1,8 +1,9 @@
 #  coding: utf-8
 import socketserver
-import urllib.parse
 from functools import reduce
 import os
+
+from percent_decode import percent_decode
 BASE_DIR = "www"
 
 # Copyright 2013 Abram Hindle, Eddie Antonio Santos
@@ -51,7 +52,8 @@ class HTTPRequest(object):
             ' '), self.data.splitlines()))
         self.method, self.path, self.version = lines[0]
         # percent decode the path
-        self.path = urllib.parse.unquote(self.path)
+        self.path = percent_decode(self.path.encode('utf-8'))
+
         mappings = filter(lambda x: len(x) == 2, lines[1:])
         other = list(filter(lambda x: len(x) == 1, lines[1:]))
         self.headers = dict(map(lambda x: (x[0], x[1]), mappings))

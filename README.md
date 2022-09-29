@@ -25,3 +25,18 @@ examples thus some of the code is Copyright © 2001-2013 Python
 Software Foundation; All Rights Reserved under the PSF license (GPL
 compatible) http://docs.python.org/2/library/socketserver.html
 
+percent_decode.py is a reproduction of the algorithm from WHATWG URL spec
+
+## Attribution
+Source: https://github.com/whatwg/url/blob/main/LICENSE
+
+Title: URL Standard
+
+Author: WHATWG
+
+License: Creative Commons Attribution 4.0 International Public License
+
+Link to License: https://github.com/whatwg/url/blob/main/LICENSE
+
+Exact description of algorithm reproduced from the spec: https://url.spec.whatwg.org/#percent-encoded-bytes
+
