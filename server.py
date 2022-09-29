@@ -1,5 +1,6 @@
 #  coding: utf-8
 import socketserver
+import urllib.parse
 from functools import reduce
 import os
 BASE_DIR = "www"
@@ -49,6 +50,8 @@ class HTTPRequest(object):
         lines = list(map(lambda x: x.strip().split(
             ' '), self.data.splitlines()))
         self.method, self.path, self.version = lines[0]
+        # percent decode the path
+        self.path = urllib.parse.unquote(self.path)
         mappings = filter(lambda x: len(x) == 2, lines[1:])
         other = list(filter(lambda x: len(x) == 1, lines[1:]))
         self.headers = dict(map(lambda x: (x[0], x[1]), mappings))
